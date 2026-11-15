@@ -1,0 +1,222 @@
+nro_orden,patente,legajo,descripcion,fecha_apertura,fecha_inicio,fecha_cierre,horas
+1,AF572EG,103,Cambio de aceite y filtros,2026-01-16,2026-01-16,2026-01-16,9
+2,AC504VR,108,Escaneo de computadora,2026-01-18,2026-01-20,2026-01-20,9
+3,AB305LU,104,Cambio de discos y pastillas,2026-01-19,2026-01-22,2026-01-25,2
+4,YRB298,101,Cambio de correa de distribución,2026-01-20,2026-01-23,2026-01-24,2
+5,SCT591,102,Cambio de bomba de agua,2026-01-21,2026-01-22,2026-01-23,7
+6,AE220KZ,105,Rectificación de discos,2026-01-21,2026-01-24,2026-01-24,4
+7,SCT591,106,Rectificación de discos,2026-01-22,2026-01-24,2026-01-26,4
+8,AE456GJ,110,Cambio de amortiguadores,2026-01-22,2026-01-24,2026-01-26,4.5
+9,AG562AN,109,Escaneo de computadora,2026-01-23,2026-01-24,2026-01-26,9
+10,SCT591,107,Reparación de cableado de luces,2026-01-25,2026-01-26,2026-01-27,6.5
+11,OGH419,111,Reparación de tren delantero,2026-01-25,2026-01-25,2026-01-27,2
+12,AC504VR,108,Cambio de batería y diagnóstico,2026-01-29,2026-01-29,2026-01-29,8
+13,AF885ZA,112,Reparación de tren delantero,2026-01-29,2026-01-31,2026-02-01,1
+14,NER807,102,Cambio de bomba de agua,2026-02-01,2026-02-02,2026-02-03,10
+15,AE423SB,103,Cambio de correa de distribución,2026-02-01,2026-02-04,2026-02-04,4
+16,AD848YF,105,Rectificación de discos,2026-02-04,2026-02-04,2026-02-07,12
+17,OGH419,111,Cambio de bujes de parrilla,2026-02-04,2026-02-05,2026-02-05,9
+18,AF253PG,101,Cambio de aceite y filtros,2026-02-05,2026-02-07,2026-02-07,8
+19,AE512KD,104,Rectificación de discos,2026-02-05,2026-02-06,2026-02-09,8
+20,AG684XV,108,Cambio de alternador,2026-02-08,2026-02-09,2026-02-10,1.5
+21,AC139DU,109,Escaneo de computadora,2026-02-08,2026-02-09,2026-02-10,1.5
+22,AC504VR,112,Cambio de amortiguadores,2026-02-08,2026-02-08,2026-02-08,12
+23,AF158AS,106,Cambio de discos y pastillas,2026-02-10,2026-02-13,2026-02-16,12
+24,MPV512,107,Cambio de alternador,2026-02-13,2026-02-15,2026-02-15,2
+25,AE828UX,112,Reparación de tren delantero,2026-02-13,2026-02-16,2026-02-18,2
+26,AE220KZ,103,Cambio de aceite y filtros,2026-02-14,2026-02-17,2026-02-20,10
+27,NER807,110,Alineación y balanceo,2026-02-14,2026-02-15,2026-02-15,2
+28,AD601BL,104,Cambio de pastillas delanteras,2026-02-15,2026-02-16,2026-02-19,4
+29,AC139DU,105,Purga de circuito de frenos,2026-02-17,2026-02-17,2026-02-20,6.5
+30,AF195VT,101,Cambio de correa de distribución,2026-02-18,2026-02-19,2026-02-19,7
+31,AF572EG,109,Reparación de cableado de luces,2026-02-19,2026-02-19,2026-02-20,5
+32,AE959JA,108,Reparación de levantavidrios,2026-02-20,2026-02-21,2026-02-22,9
+33,SCT591,111,Cambio de amortiguadores,2026-02-20,2026-02-21,2026-02-21,8
+34,SCT591,102,Reparación de junta de tapa,2026-02-21,2026-02-21,2026-02-23,4.5
+35,AF158AS,107,Escaneo de computadora,2026-02-23,2026-02-26,2026-02-27,2
+36,AB630TA,101,Ajuste de inyección,2026-02-25,2026-02-27,2026-03-01,1
+37,AC504VR,104,Cambio de discos y pastillas,2026-02-26,2026-02-28,2026-02-28,4.5
+38,AB931OP,106,Cambio de cilindro de rueda,2026-03-02,2026-03-03,2026-03-05,9
+39,AF195VT,111,Alineación y balanceo,2026-03-02,2026-03-02,2026-03-02,3
+40,AD937RX,102,Cambio de bomba de agua,2026-03-03,2026-03-03,2026-03-05,7.5
+41,AC139DU,109,Reparación de levantavidrios,2026-03-03,2026-03-03,2026-03-03,1
+42,AE456GJ,110,Alineación y balanceo,2026-03-05,2026-03-07,2026-03-07,10
+43,AE220KZ,103,Cambio de correa de distribución,2026-03-07,2026-03-07,2026-03-08,7
+44,AA267FC,108,Reparación de levantavidrios,2026-03-08,2026-03-10,2026-03-10,5
+45,YRB298,105,Rectificación de discos,2026-03-09,2026-03-10,2026-03-13,3.5
+46,AC139DU,109,Cambio de batería y diagnóstico,2026-03-09,2026-03-12,2026-03-15,2
+47,AC504VR,112,Alineación y balanceo,2026-03-09,2026-03-09,2026-03-11,12
+48,AC504VR,104,Rectificación de discos,2026-03-10,2026-03-11,2026-03-12,6
+49,LNK437,111,Cambio de amortiguadores,2026-03-11,2026-03-11,2026-03-12,7.5
+50,SCT591,102,Diagnóstico de pérdida de potencia,2026-03-14,2026-03-17,2026-03-20,2.5
+51,AC139DU,103,Ajuste de inyección,2026-03-16,2026-03-17,2026-03-18,4
+52,AD848YF,101,Ajuste de inyección,2026-03-18,2026-03-18,2026-03-21,5
+53,AE959JA,106,Cambio de cilindro de rueda,2026-03-18,2026-03-19,2026-03-22,1.5
+54,AD937RX,107,Reparación de cableado de luces,2026-03-19,2026-03-19,2026-03-20,2
+55,AC139DU,105,Cambio de cilindro de rueda,2026-03-21,2026-03-23,2026-03-25,5
+56,NER807,104,Cambio de cilindro de rueda,2026-03-23,2026-03-23,2026-03-23,0.5
+57,AE959JA,110,Reparación de tren delantero,2026-03-25,2026-03-26,2026-03-27,10
+58,AG307BX,106,Cambio de cilindro de rueda,2026-03-26,2026-03-29,2026-03-31,7.5
+59,OGH419,111,Reparación de tren delantero,2026-03-26,2026-03-29,2026-03-31,4
+60,AE220KZ,103,Cambio de correa de distribución,2026-03-27,2026-03-29,2026-04-01,12
+61,AE220KZ,108,Escaneo de computadora,2026-03-28,2026-03-29,2026-03-31,3.5
+62,AG562AN,112,Cambio de rótulas,2026-03-28,2026-03-28,2026-03-31,9
+63,MPV512,101,Cambio de aceite y filtros,2026-03-29,2026-04-01,2026-04-02,2
+64,NER807,102,Cambio de aceite y filtros,2026-03-30,2026-03-30,2026-03-31,9
+65,AE220KZ,105,Cambio de discos y pastillas,2026-04-02,2026-04-04,2026-04-07,6
+66,AD800GA,109,Cambio de alternador,2026-04-02,2026-04-02,2026-04-03,6
+67,SCT591,107,Cambio de alternador,2026-04-04,2026-04-07,2026-04-09,3
+68,AD601BL,104,Purga de circuito de frenos,2026-04-05,2026-04-08,2026-04-08,2
+69,AG307BX,106,Cambio de pastillas delanteras,2026-04-07,2026-04-09,2026-04-09,3
+70,AG416LW,112,Reparación de tren delantero,2026-04-07,2026-04-09,2026-04-11,2
+71,AE423SB,103,Cambio de correa de distribución,2026-04-08,2026-04-11,2026-04-13,7.5
+72,AD808ID,111,Cambio de amortiguadores,2026-04-08,2026-04-11,2026-04-12,8
+73,AB305LU,108,Reparación de cableado de luces,2026-04-12,2026-04-15,2026-04-15,9
+74,AC139DU,109,Cambio de batería y diagnóstico,2026-04-13,2026-04-16,2026-04-19,2
+75,NER807,110,Reparación de tren delantero,2026-04-13,2026-04-13,2026-04-16,2.5
+76,AF195VT,101,Cambio de bomba de agua,2026-04-15,2026-04-17,2026-04-19,3.5
+77,AE423SB,105,Cambio de cilindro de rueda,2026-04-16,2026-04-19,2026-04-19,6
+78,SCT591,102,Cambio de aceite y filtros,2026-04-18,2026-04-20,2026-04-23,0.5
+79,AG416LW,106,Rectificación de discos,2026-04-18,2026-04-20,2026-04-20,8
+80,AD472JM,103,Diagnóstico de pérdida de potencia,2026-04-19,2026-04-20,2026-04-20,3.5
+81,AA267FC,108,Escaneo de computadora,2026-04-23,2026-04-23,2026-04-23,0.5
+82,AF158AS,107,Escaneo de computadora,2026-04-24,2026-04-25,2026-04-28,9
+83,AE512KD,104,Cambio de pastillas delanteras,2026-04-25,2026-04-26,2026-04-27,8
+84,AG307BX,111,Cambio de bujes de parrilla,2026-04-26,2026-04-27,2026-04-30,6
+85,AG562AN,105,Cambio de cilindro de rueda,2026-04-27,2026-04-30,2026-04-30,12
+86,AG416LW,106,Cambio de discos y pastillas,2026-04-27,2026-04-29,2026-04-29,1
+87,AF158AS,112,Reparación de tren delantero,2026-04-27,2026-04-29,2026-05-02,2
+88,AE959JA,110,Reparación de tren delantero,2026-04-28,2026-05-01,2026-05-01,7.5
+89,AB368XA,101,Ajuste de inyección,2026-05-02,2026-05-03,2026-05-03,6.5
+90,AG562AN,109,Cambio de alternador,2026-05-02,2026-05-04,2026-05-07,4.5
+91,AG307BX,102,Cambio de aceite y filtros,2026-05-04,2026-05-04,2026-05-04,1
+92,AC504VR,108,Cambio de alternador,2026-05-04,2026-05-04,2026-05-05,2
+93,AD848YF,105,Cambio de discos y pastillas,2026-05-07,2026-05-07,2026-05-10,9
+94,WYN617,103,Cambio de bomba de agua,2026-05-08,2026-05-10,2026-05-11,7.5
+95,MPV512,106,Purga de circuito de frenos,2026-05-08,2026-05-08,2026-05-09,8
+96,AA267FC,111,Alineación y balanceo,2026-05-10,2026-05-13,2026-05-15,8
+97,YRB298,107,Reparación de cableado de luces,2026-05-13,2026-05-14,2026-05-14,6
+98,AB305LU,104,Cambio de cilindro de rueda,2026-05-14,2026-05-14,2026-05-17,12
+99,AA306EG,112,Reparación de tren delantero,2026-05-14,2026-05-17,2026-05-18,6
+100,XOA613,101,Ajuste de inyección,2026-05-15,2026-05-17,2026-05-17,10
+101,AE959JA,108,Cambio de alternador,2026-05-17,2026-05-20,2026-05-20,4.5
+102,SCT591,106,Rectificación de discos,2026-05-18,2026-05-21,2026-05-22,12
+103,AE456GJ,110,Cambio de amortiguadores,2026-05-18,2026-05-20,2026-05-21,5
+104,WYN617,107,Escaneo de computadora,2026-05-19,2026-05-21,2026-05-22,6
+105,LNK437,102,Reparación de junta de tapa,2026-05-20,2026-05-21,2026-05-23,2
+106,AC139DU,103,Reparación de junta de tapa,2026-05-21,2026-05-24,2026-05-27,2
+107,AF572EG,109,Reparación de levantavidrios,2026-05-21,2026-05-24,2026-05-24,2
+108,AA306EG,105,Cambio de cilindro de rueda,2026-05-24,2026-05-26,2026-05-28,2
+109,AE959JA,110,Reparación de tren delantero,2026-05-25,2026-05-28,2026-05-31,2
+110,LNK437,111,Cambio de rótulas,2026-05-25,2026-05-26,2026-05-27,0.5
+111,AA306EG,112,Cambio de bujes de parrilla,2026-05-27,2026-05-30,2026-05-31,5
+112,AD848YF,101,Cambio de correa de distribución,2026-05-29,2026-06-01,2026-06-01,6
+113,AE563WH,108,Reparación de cableado de luces,2026-06-01,2026-06-02,2026-06-04,2
+114,AE555GX,102,Diagnóstico de pérdida de potencia,2026-06-02,2026-06-03,2026-06-06,6
+115,AB305LU,104,Cambio de cilindro de rueda,2026-06-02,2026-06-02,2026-06-05,2.5
+116,AF158AS,107,Cambio de batería y diagnóstico,2026-06-06,2026-06-09,2026-06-12,9
+117,NER807,110,Cambio de amortiguadores,2026-06-08,2026-06-11,2026-06-13,1
+118,AE512KD,104,Cambio de cilindro de rueda,2026-06-10,2026-06-12,2026-06-12,2
+119,AG416LW,106,Rectificación de discos,2026-06-11,2026-06-11,2026-06-12,7
+120,AC139DU,109,Reparación de cableado de luces,2026-06-12,2026-06-13,2026-06-14,1.5
+121,AD848YF,101,Ajuste de inyección,2026-06-13,2026-06-13,2026-06-13,4
+122,AA267FC,111,Alineación y balanceo,2026-06-13,2026-06-15,2026-06-16,12
+123,AG562AN,105,Cambio de pastillas delanteras,2026-06-14,2026-06-17,2026-06-17,6
+124,AF158AS,112,Alineación y balanceo,2026-06-15,2026-06-17,2026-06-20,3.5
+125,AF572EG,103,Ajuste de inyección,2026-06-16,2026-06-16,2026-06-18,3
+126,AE220KZ,108,Cambio de alternador,2026-06-17,2026-06-18,2026-06-18,10
+127,AB368XA,107,Cambio de alternador,2026-06-21,2026-06-23,2026-06-25,3.5
+128,SCT591,102,Ajuste de inyección,2026-06-22,2026-06-25,2026-06-25,6
+129,AF158AS,106,Cambio de pastillas delanteras,2026-06-22,2026-06-24,2026-06-27,7.5
+130,AD601BL,104,Rectificación de discos,2026-06-24,2026-06-27,2026-06-28,1.5
+131,AD808ID,111,Reparación de tren delantero,2026-06-24,2026-06-26,2026-06-27,3
+132,AD601BL,101,Cambio de bomba de agua,2026-06-25,2026-06-25,2026-06-27,6
+133,AD800GA,109,Reparación de cableado de luces,2026-06-25,2026-06-25,2026-06-27,4.5
+134,AE555GX,108,Cambio de alternador,2026-06-27,2026-06-27,2026-06-29,0.5
+135,AF885ZA,105,Cambio de pastillas delanteras,2026-06-28,2026-06-28,2026-07-01,6.5
+136,AC139DU,110,Cambio de bujes de parrilla,2026-06-29,2026-07-01,2026-07-04,7.5
+137,AA267FC,103,Diagnóstico de pérdida de potencia,2026-07-05,2026-07-08,2026-07-08,7.5
+138,AE555GX,111,Alineación y balanceo,2026-07-09,2026-07-11,2026-07-12,6
+139,AD800GA,110,Reparación de tren delantero,2026-07-10,2026-07-13,2026-07-14,7.5
+140,MPV512,107,Cambio de batería y diagnóstico,2026-07-11,2026-07-11,2026-07-14,3.5
+141,AG562AN,109,Reparación de levantavidrios,2026-07-11,2026-07-12,2026-07-14,4.5
+142,AF885ZA,102,Reparación de junta de tapa,2026-07-12,2026-07-15,2026-07-16,7.5
+143,AA267FC,108,Reparación de cableado de luces,2026-07-12,2026-07-12,2026-07-12,3.5
+144,AF195VT,101,Cambio de aceite y filtros,2026-07-13,2026-07-14,2026-07-15,4.5
+145,AD848YF,105,Purga de circuito de frenos,2026-07-13,2026-07-14,2026-07-14,2
+146,SCT591,106,Cambio de cilindro de rueda,2026-07-13,2026-07-13,2026-07-16,2
+147,AB305LU,104,Cambio de cilindro de rueda,2026-07-15,2026-07-18,2026-07-21,2
+148,AE563WH,108,Cambio de alternador,2026-07-17,2026-07-20,2026-07-21,4
+149,AF572EG,109,Cambio de batería y diagnóstico,2026-07-18,2026-07-21,2026-07-23,2
+150,SCT591,107,Reparación de cableado de luces,2026-07-21,2026-07-24,2026-07-26,1
+151,XOA613,101,Reparación de junta de tapa,2026-07-23,2026-07-23,2026-07-24,6.5
+152,AB305LU,103,Diagnóstico de pérdida de potencia,2026-07-23,2026-07-24,2026-07-25,2
+153,AF158AS,106,Cambio de cilindro de rueda,2026-07-23,2026-07-25,2026-07-28,2.5
+154,AE423SB,108,Reparación de cableado de luces,2026-07-27,2026-07-30,2026-08-02,4
+155,LNK437,111,Cambio de rótulas,2026-07-27,2026-07-28,2026-07-31,6.5
+156,AE959JA,110,Cambio de amortiguadores,2026-07-30,2026-07-31,2026-08-02,8
+157,AA306EG,105,Rectificación de discos,2026-08-01,2026-08-02,2026-08-05,9
+158,AE959JA,106,Purga de circuito de frenos,2026-08-02,2026-08-05,2026-08-08,3
+159,AF572EG,103,Cambio de correa de distribución,2026-08-04,2026-08-05,2026-08-06,2.5
+160,LNK437,102,Reparación de junta de tapa,2026-08-05,2026-08-05,2026-08-07,9
+161,AE828UX,104,Purga de circuito de frenos,2026-08-05,2026-08-05,2026-08-08,2.5
+162,AD848YF,101,Reparación de junta de tapa,2026-08-06,2026-08-08,2026-08-10,3
+163,AG307BX,109,Cambio de alternador,2026-08-09,2026-08-09,2026-08-09,10
+164,SCT591,107,Reparación de cableado de luces,2026-08-13,2026-08-14,2026-08-15,10
+165,AF885ZA,102,Reparación de junta de tapa,2026-08-14,2026-08-15,2026-08-16,8
+166,AC449XP,108,Cambio de batería y diagnóstico,2026-08-14,2026-08-16,2026-08-16,12
+167,WYN617,103,Cambio de bomba de agua,2026-08-15,2026-08-16,2026-08-16,7.5
+168,AD808ID,111,Cambio de rótulas,2026-08-16,2026-08-16,2026-08-16,1
+169,YRB298,105,Cambio de cilindro de rueda,2026-08-17,2026-08-17,2026-08-19,1.5
+170,AC139DU,110,Cambio de bujes de parrilla,2026-08-18,2026-08-18,2026-08-18,5
+171,NER807,104,Cambio de cilindro de rueda,2026-08-20,2026-08-20,2026-08-22,7
+172,AG307BX,109,Escaneo de computadora,2026-08-21,2026-08-24,2026-08-27,2
+173,AE959JA,106,Cambio de discos y pastillas,2026-08-22,2026-08-25,2026-08-25,9
+174,AE563WH,111,Reparación de tren delantero,2026-08-25,2026-08-27,2026-08-27,7.5
+175,YRB298,105,Cambio de cilindro de rueda,2026-08-26,2026-08-28,2026-08-30,1
+176,AD800GA,110,Reparación de tren delantero,2026-08-26,2026-08-27,2026-08-30,7.5
+177,AF253PG,101,Cambio de bomba de agua,2026-08-27,2026-08-30,2026-08-31,6
+178,AE220KZ,103,Diagnóstico de pérdida de potencia,2026-08-31,2026-09-01,2026-09-02,7.5
+179,MPV512,106,Cambio de pastillas delanteras,2026-08-31,2026-09-03,2026-09-05,1
+180,AG307BX,102,Cambio de correa de distribución,2026-09-01,2026-09-03,2026-09-06,4
+181,MPV512,107,Reparación de cableado de luces,2026-09-02,2026-09-04,2026-09-04,4.5
+182,AE555GX,108,Escaneo de computadora,2026-09-02,2026-09-02,2026-09-03,7
+183,AC449XP,104,Cambio de discos y pastillas,2026-09-06,2026-09-07,2026-09-10,2
+184,AB305LU,108,Cambio de batería y diagnóstico,2026-09-08,2026-09-11,2026-09-12,1.5
+185,AC139DU,103,Cambio de bomba de agua,2026-09-09,2026-09-11,2026-09-14,7.5
+186,AD808ID,111,Cambio de rótulas,2026-09-09,2026-09-12,2026-09-14,10
+187,AG307BX,109,Reparación de cableado de luces,2026-09-11,2026-09-14,2026-09-16,0.5
+188,AG307BX,102,Cambio de aceite y filtros,2026-09-12,2026-09-15,2026-09-15,2
+189,YRB298,107,Reparación de cableado de luces,2026-09-13,2026-09-16,2026-09-16,4
+190,AB931OP,106,Purga de circuito de frenos,2026-09-15,2026-09-17,2026-09-19,2
+191,NER807,110,Cambio de rótulas,2026-09-15,2026-09-18,2026-09-19,6
+192,AB368XA,105,Rectificación de discos,2026-09-16,2026-09-19,2026-09-21,3
+193,MPV512,101,Cambio de bomba de agua,2026-09-17,2026-09-20,2026-09-21,6
+194,AE828UX,104,Cambio de pastillas delanteras,2026-09-17,2026-09-20,2026-09-21,6
+195,AB630TA,108,Escaneo de computadora,2026-09-18,2026-09-21,2026-09-22,1
+196,LNK437,102,Cambio de aceite y filtros,2026-09-22,2026-09-25,2026-09-26,4
+197,AG562AN,109,Cambio de batería y diagnóstico,2026-09-22,2026-09-24,2026-09-25,2
+198,MPV512,111,Reparación de tren delantero,2026-09-22,2026-09-25,2026-09-28,7.5
+199,AE423SB,103,Cambio de aceite y filtros,2026-09-27,2026-09-29,2026-10-02,6
+200,AD848YF,105,Cambio de cilindro de rueda,2026-09-30,2026-09-30,2026-10-01,7
+201,MPV512,107,Cambio de batería y diagnóstico,2026-09-30,2026-10-01,2026-10-03,7.5
+202,AD808ID,108,Reparación de levantavidrios,2026-09-30,2026-10-03,2026-10-04,6
+203,AF885ZA,112,Cambio de rótulas,2026-10-02,2026-10-03,2026-10-03,10
+204,AF195VT,106,Cambio de pastillas delanteras,2026-10-05,2026-10-06,2026-10-09,4.5
+205,AC449XP,104,Purga de circuito de frenos,2026-10-06,2026-10-08,2026-10-11,12
+206,AF885ZA,105,Cambio de cilindro de rueda,2026-10-07,2026-10-10,2026-10-13,12
+207,AG307BX,109,Reparación de cableado de luces,2026-10-07,2026-10-10,2026-10-13,2
+208,AE456GJ,110,Cambio de amortiguadores,2026-10-08,2026-10-09,2026-10-09,6.5
+209,MPV512,111,Cambio de bujes de parrilla,2026-10-08,2026-10-10,2026-10-13,2
+210,AF253PG,101,Ajuste de inyección,2026-10-10,2026-10-10,2026-10-12,6
+211,AE959JA,102,Cambio de aceite y filtros,2026-10-10,2026-10-12,2026-10-15,6.5
+212,AC139DU,103,Cambio de aceite y filtros,2026-10-11,2026-10-12,2026-10-15,4.5
+213,AA306EG,112,Cambio de rótulas,2026-10-16,2026-10-16,2026-10-16,1.5
+214,AE555GX,108,Escaneo de computadora,2026-10-17,2026-10-19,2026-10-20,1.5
+215,NER807,102,Cambio de bomba de agua,2026-10-24,2026-10-25,,
+216,WYN617,107,Reparación de levantavidrios,2026-10-24,2026-10-25,,
+217,AG562AN,109,Escaneo de computadora,2026-10-24,2026-10-25,,
+218,AC139DU,109,Reparación de levantavidrios,2026-10-27,,,
+219,YRB298,105,Cambio de discos y pastillas,2026-10-28,,,
+220,AC504VR,104,Rectificación de discos,2026-10-29,,,
+221,AC504VR,103,Cambio de aceite y filtros,2026-10-31,,,

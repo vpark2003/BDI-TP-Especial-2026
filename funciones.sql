@@ -42,5 +42,8 @@ CREATE TABLE orden
   horas DECIMAL(4,1),
   PRIMARY KEY (nro_orden),
   FOREIGN KEY (patente) REFERENCES vehiculo,
-  FOREIGN KEY (legajo)  REFERENCES mecanico
+  FOREIGN KEY (legajo)  REFERENCES mecanico,
+  CHECK (fecha_inicio >= fecha_apertura),
+  CHECK (fecha_cierre IS NULL OR (fecha_inicio IS NOT NULL AND fecha_cierre >= fecha_inicio)),
+  CHECK ((fecha_cierre IS NULL AND horas IS NULL) OR (fecha_cierre IS NOT NULL AND horas IS NOT NULL AND horas > 0))
 );

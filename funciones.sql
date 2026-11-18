@@ -63,9 +63,7 @@ CREATE TEMP TABLE asignacion_plana
 );
 
 -- reemplazar la ruta por la ruta completa al archivo en su computadora
-COPY asignacion_plana
-FROM '/ruta completa a asignacion.csv'
-CSV HEADER;
+\copy asignacion_plana FROM 'asignacion.csv' CSV HEADER
 
 INSERT INTO vehiculo
 SELECT DISTINCT patente, marca, modelo
@@ -79,9 +77,7 @@ INSERT INTO asignacion
 SELECT patente, legajo, fecha_asignacion
 FROM asignacion_plana;
 
-COPY orden
-FROM 'ruta completa a orden.csv'
-CSV HEADER;
+\copy orden FROM 'orden.csv' CSV HEADER
 
 -- Trigger: control de especialidades en asignaciones
 
@@ -228,3 +224,5 @@ BEGIN
         
 END;
 $$ LANGUAGE plpgsql;
+
+ \i trigger_orden.sql

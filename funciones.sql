@@ -110,3 +110,31 @@ CREATE TRIGGER controlar_especialidad_asignacion
 BEFORE INSERT OR UPDATE ON asignacion
 FOR EACH ROW
 EXECUTE PROCEDURE verificar_especialidad_asignacion();
+
+-- Trigger: control de cambios de especialidad en mecanicos
+
+CREATE OR REPLACE FUNCTION verificar_cambio_especialidad()
+RETURNS TRIGGER AS $$
+DECLARE
+    cantidad INT;
+BEGIN
+    SELECT COUNT(*) INTO cantidad
+    FROM asignacion a1
+    JOIN asignacion a2 ON a1.patente = a2.patente
+    JOIN mecanico m ON a2.legajo = m.legajo
+    WHERE a1.legajo = NEW.legajo
+      AND a2.legajo <> NEW.legajo
+      AND m.especialidad = NEW.especialidad;
+
+    IF cantidad > 0 THEN
+        RAISE EXCEPTION 'El cambio de especialidad genera conflictos en las asignaciones';
+    END IF;
+
+    RETURN NEW;
+END;
+$$ LANGUAGE plpgsql;
+
+CREATE TRIGGER controlar_cambio_especialidad
+BEFORE UPDATE ON mecanico
+FOR EACH ROW
+EXECUTE PROCEDURE verificar_cambio_especialidad();

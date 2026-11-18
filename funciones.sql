@@ -82,3 +82,31 @@ FROM asignacion_plana;
 COPY orden
 FROM 'ruta completa a orden.csv'
 CSV HEADER;
+
+-- Trigger: control de especialidades en asignaciones
+
+CREATE OR REPLACE FUNCTION verificar_especialidad_asignacion()
+RETURNS TRIGGER AS $$
+DECLARE
+    cantidad INT;
+BEGIN
+    SELECT COUNT(*) INTO cantidad
+    FROM asignacion a
+    JOIN mecanico m1 ON a.legajo = m1.legajo
+    JOIN mecanico m2 ON m2.legajo = NEW.legajo
+    WHERE a.patente = NEW.patente
+      AND m1.especialidad = m2.especialidad
+      AND a.legajo <> NEW.legajo;
+
+    IF cantidad > 0 THEN
+        RAISE EXCEPTION 'Ya existe un mecanico de esa especialidad asignado al vehiculo';
+    END IF;
+
+    RETURN NEW;
+END;
+$$ LANGUAGE plpgsql;
+
+CREATE TRIGGER controlar_especialidad_asignacion
+BEFORE INSERT OR UPDATE ON asignacion
+FOR EACH ROW
+EXECUTE PROCEDURE verificar_especialidad_asignacion();

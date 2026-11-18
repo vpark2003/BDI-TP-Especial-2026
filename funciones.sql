@@ -138,3 +138,93 @@ CREATE TRIGGER controlar_cambio_especialidad
 BEFORE UPDATE ON mecanico
 FOR EACH ROW
 EXECUTE PROCEDURE verificar_cambio_especialidad();
+
+-- Funcion: reporte de ordenes cerradas del taller
+
+CREATE OR REPLACE FUNCTION reporte_taller(p_desde DATE, p_hasta DATE)
+RETURNS VOID AS $$
+DECLARE
+    mi_cursor CURSOR FOR
+        SELECT m.especialidad, m.legajo, m.nombre,
+               COUNT(*) AS cantidad_ordenes,
+               SUM(o.horas) AS total_horas
+        FROM orden o
+        JOIN mecanico m ON o.legajo = m.legajo
+        WHERE o.fecha_cierre BETWEEN p_desde AND p_hasta
+        GROUP BY m.especialidad, m.legajo, m.nombre
+        ORDER BY m.especialidad, total_horas DESC, m.legajo;
+
+    fila RECORD;
+    
+    especialidad_anterior VARCHAR(20);
+
+    subtotal_ordenes INT := 0;
+    subtotal_horas NUMERIC := 0;
+
+    total_ordenes INT := 0;
+    total_horas NUMERIC := 0;
+    
+    cantidad INT;
+
+BEGIN
+    IF p_desde > p_hasta THEN
+        RAISE EXCEPTION 'La fecha inicial no puede ser posterior a la fecha final';
+    END IF;
+
+    SELECT COUNT(*) INTO cantidad
+    FROM orden
+    WHERE fecha_cierre BETWEEN p_desde AND p_hasta;
+
+    IF cantidad = 0 THEN
+        RETURN;
+    END IF;
+
+    RAISE NOTICE '======== REPORTE DE ÓRDENES CERRADAS ========';
+    RAISE NOTICE 'Período: % a %', p_desde, p_hasta;
+
+    OPEN mi_cursor;
+
+    LOOP
+        FETCH mi_cursor INTO fila;
+        EXIT WHEN NOT FOUND;
+        IF especialidad_anterior IS NULL OR
+            especialidad_anterior <> fila.especialidad THEN
+
+            IF especialidad_anterior IS NOT NULL THEN
+                RAISE NOTICE '-- subtotal %: % órdenes, % h',
+                    especialidad_anterior, subtotal_ordenes, subtotal_horas;
+            END IF;
+
+            RAISE NOTICE '== Especialidad: % ==', fila.especialidad;
+
+            especialidad_anterior := fila.especialidad;
+
+            subtotal_ordenes := 0;
+            subtotal_horas := 0;
+
+        END IF;
+
+        RAISE NOTICE '[%] % - % órdenes - % h',
+            fila.legajo,
+            fila.nombre,
+            fila.cantidad_ordenes,
+            fila.total_horas;
+
+        subtotal_ordenes := subtotal_ordenes + fila.cantidad_ordenes;
+        subtotal_horas := subtotal_horas + fila.total_horas;
+
+        total_ordenes := total_ordenes + fila.cantidad_ordenes;
+        total_horas := total_horas + fila.total_horas;
+
+    END LOOP;
+
+    CLOSE mi_cursor;
+
+    RAISE NOTICE '-- subtotal %: % órdenes, % h',
+        especialidad_anterior, subtotal_ordenes, subtotal_horas;
+
+    RAISE NOTICE '======== TOTAL: % órdenes, % h ========',
+        total_ordenes, total_horas;
+        
+END;
+$$ LANGUAGE plpgsql;

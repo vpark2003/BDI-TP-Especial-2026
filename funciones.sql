@@ -1,4 +1,3 @@
-
 DROP TABLE IF EXISTS mecanico CASCADE;
 DROP TABLE IF EXISTS vehiculo CASCADE;
 DROP TABLE IF EXISTS asignacion CASCADE;
@@ -110,36 +109,6 @@ CREATE TRIGGER controlar_cambio_especialidad
 BEFORE UPDATE ON mecanico
 FOR EACH ROW
 EXECUTE PROCEDURE verificar_cambio_especialidad();
-
--- ===== IMPORTACION =====
-
-CREATE TEMP TABLE asignacion_plana
-(
-  patente VARCHAR(10),
-  marca VARCHAR(30),
-  modelo VARCHAR(30),
-  legajo INT,
-  nombre_mecanico VARCHAR(50),
-  especialidad VARCHAR(20),
-  fecha_asignacion DATE
-);
-
--- reemplazar la ruta por la ruta completa al archivo en su computadora
-\copy asignacion_plana FROM 'asignacion.csv' CSV HEADER
-
-INSERT INTO vehiculo
-SELECT DISTINCT patente, marca, modelo
-FROM asignacion_plana;
-
-INSERT INTO mecanico
-SELECT DISTINCT legajo, nombre_mecanico, especialidad
-FROM asignacion_plana;
-
-INSERT INTO asignacion
-SELECT patente, legajo, fecha_asignacion
-FROM asignacion_plana;
-
-\copy orden FROM 'orden.csv' CSV HEADER
 
 -- Funcion: reporte de ordenes cerradas del taller
 
@@ -283,10 +252,7 @@ BEGIN
     END IF;
 
 
-    IF TG_OP = 'INSERT'
-        OR (TG_OP = 'UPDATE'
-            AND (NEW.patente IS DISTINCT FROM OLD.patente
-                OR NEW.legajo IS DISTINCT FROM OLD.legajo)) THEN
+    IF TG_OP = 'UPDATE' THEN
 
         -- Regla 2: una orden cerrada no puede modificarse
         IF estado_orden(OLD.nro_orden) = 'cerrada' THEN
@@ -332,3 +298,39 @@ CREATE TRIGGER controlar_orden
 BEFORE INSERT OR UPDATE ON orden
 FOR EACH ROW
 EXECUTE PROCEDURE verificar_orden();
+
+-- ===== IMPORTACION =====
+-- Va al final para que los triggers ya existan y se ejecuten durante la carga.
+
+CREATE TEMP TABLE asignacion_plana
+(
+  patente VARCHAR(10),
+  marca VARCHAR(30),
+  modelo VARCHAR(30),
+  legajo INT,
+  nombre_mecanico VARCHAR(50),
+  especialidad VARCHAR(20),
+  fecha_asignacion DATE
+);
+
+-- reemplazar la ruta por la ruta completa al archivo en su computadora
+COPY asignacion_plana
+FROM '/ruta/completa/a/asignacion.csv'
+CSV HEADER;
+
+INSERT INTO vehiculo
+SELECT DISTINCT patente, marca, modelo
+FROM asignacion_plana;
+
+INSERT INTO mecanico
+SELECT DISTINCT legajo, nombre_mecanico, especialidad
+FROM asignacion_plana;
+
+INSERT INTO asignacion
+SELECT patente, legajo, fecha_asignacion
+FROM asignacion_plana;
+
+-- reemplazar la ruta por la ruta completa al archivo en su computadora
+COPY orden
+FROM '/ruta/completa/a/orden.csv'
+CSV HEADER;

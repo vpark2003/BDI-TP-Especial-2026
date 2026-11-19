@@ -1,3 +1,4 @@
+
 DROP TABLE IF EXISTS mecanico CASCADE;
 DROP TABLE IF EXISTS vehiculo CASCADE;
 DROP TABLE IF EXISTS asignacion CASCADE;
@@ -49,36 +50,6 @@ CREATE TABLE orden
   CHECK ((fecha_cierre IS NULL AND horas IS NULL) OR (fecha_cierre IS NOT NULL AND horas IS NOT NULL AND horas > 0))
 );
 
--- ===== IMPORTACION =====
-
-CREATE TEMP TABLE asignacion_plana
-(
-  patente VARCHAR(10),
-  marca VARCHAR(30),
-  modelo VARCHAR(30),
-  legajo INT,
-  nombre_mecanico VARCHAR(50),
-  especialidad VARCHAR(20),
-  fecha_asignacion DATE
-);
-
--- reemplazar la ruta por la ruta completa al archivo en su computadora
-\copy asignacion_plana FROM 'asignacion.csv' CSV HEADER
-
-INSERT INTO vehiculo
-SELECT DISTINCT patente, marca, modelo
-FROM asignacion_plana;
-
-INSERT INTO mecanico
-SELECT DISTINCT legajo, nombre_mecanico, especialidad
-FROM asignacion_plana;
-
-INSERT INTO asignacion
-SELECT patente, legajo, fecha_asignacion
-FROM asignacion_plana;
-
-\copy orden FROM 'orden.csv' CSV HEADER
-
 -- Trigger: control de especialidades en asignaciones
 
 CREATE OR REPLACE FUNCTION verificar_especialidad_asignacion()
@@ -92,7 +63,12 @@ BEGIN
     JOIN mecanico m2 ON m2.legajo = NEW.legajo
     WHERE a.patente = NEW.patente
       AND m1.especialidad = m2.especialidad
-      AND a.legajo <> NEW.legajo;
+      AND a.legajo <> NEW.legajo
+      AND NOT (
+          TG_OP = 'UPDATE'
+          AND a.patente = OLD.patente
+          AND a.legajo = OLD.legajo
+      );
 
     IF cantidad > 0 THEN
         RAISE EXCEPTION 'Ya existe un mecanico de esa especialidad asignado al vehiculo';
@@ -135,6 +111,36 @@ BEFORE UPDATE ON mecanico
 FOR EACH ROW
 EXECUTE PROCEDURE verificar_cambio_especialidad();
 
+-- ===== IMPORTACION =====
+
+CREATE TEMP TABLE asignacion_plana
+(
+  patente VARCHAR(10),
+  marca VARCHAR(30),
+  modelo VARCHAR(30),
+  legajo INT,
+  nombre_mecanico VARCHAR(50),
+  especialidad VARCHAR(20),
+  fecha_asignacion DATE
+);
+
+-- reemplazar la ruta por la ruta completa al archivo en su computadora
+\copy asignacion_plana FROM 'asignacion.csv' CSV HEADER
+
+INSERT INTO vehiculo
+SELECT DISTINCT patente, marca, modelo
+FROM asignacion_plana;
+
+INSERT INTO mecanico
+SELECT DISTINCT legajo, nombre_mecanico, especialidad
+FROM asignacion_plana;
+
+INSERT INTO asignacion
+SELECT patente, legajo, fecha_asignacion
+FROM asignacion_plana;
+
+\copy orden FROM 'orden.csv' CSV HEADER
+
 -- Funcion: reporte de ordenes cerradas del taller
 
 CREATE OR REPLACE FUNCTION reporte_taller(p_desde DATE, p_hasta DATE)
@@ -151,7 +157,7 @@ DECLARE
         ORDER BY m.especialidad, total_horas DESC, m.legajo;
 
     fila RECORD;
-    
+
     especialidad_anterior VARCHAR(20);
 
     subtotal_ordenes INT := 0;
@@ -159,7 +165,7 @@ DECLARE
 
     total_ordenes INT := 0;
     total_horas NUMERIC := 0;
-    
+
     cantidad INT;
 
 BEGIN
@@ -183,8 +189,9 @@ BEGIN
     LOOP
         FETCH mi_cursor INTO fila;
         EXIT WHEN NOT FOUND;
+
         IF especialidad_anterior IS NULL OR
-            especialidad_anterior <> fila.especialidad THEN
+           especialidad_anterior <> fila.especialidad THEN
 
             IF especialidad_anterior IS NOT NULL THEN
                 RAISE NOTICE '-- subtotal %: % órdenes, % h',
@@ -221,7 +228,7 @@ BEGIN
 
     RAISE NOTICE '======== TOTAL: % órdenes, % h ========',
         total_ordenes, total_horas;
-        
+
 END;
 $$ LANGUAGE plpgsql;
 

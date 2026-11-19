@@ -276,7 +276,10 @@ BEGIN
     END IF;
 
 
-    IF TG_OP = 'UPDATE' THEN
+    IF TG_OP = 'INSERT'
+        OR (TG_OP = 'UPDATE'
+            AND (NEW.patente IS DISTINCT FROM OLD.patente
+                OR NEW.legajo IS DISTINCT FROM OLD.legajo)) THEN
 
         -- Regla 2: una orden cerrada no puede modificarse
         IF estado_orden(OLD.nro_orden) = 'cerrada' THEN
